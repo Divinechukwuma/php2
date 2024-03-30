@@ -101,4 +101,13 @@
 
 // when using a dedicated html file omit the php end tag
 
+$heading = "Home";
+
+ 
+
+//   echo $_SERVER['REQUEST_URI'];
+
+require "functions.php";
+
+
 require "./views/index.view.php";
