@@ -13,7 +13,7 @@
 
     // $cool = "hey";
 
-    // echo "$cool wassup";
+    // echo $cool ." wassup";
 
     // $name = "Dark matter";
 
@@ -56,7 +56,9 @@
         ],
 
         [
+            //key
             'name' => 'hail mary',
+                    //value
             'author' => 'oge',
             'realeaseYear' => 1990,
             'purchaseUrl' => ' http/awesome'
@@ -64,15 +66,42 @@
 
         [
             'name' => 'rich dad poor dad',
-            'author' => 'jerome',
-            'realeaseYear' => 1660,
+            'author' => 'oge',
+            'realeaseYear' => 2060,
 
             'purchaseUrl' => ' http/awesome'
-        ]
+        ] 
 
 
     ];
 
+    function filter($items, $fn)
+    {
+
+        //creatiing an empty array   
+        $filteredItems = [];
+
+        foreach ($items as $item) {
+
+            if ($fn($item)) {
+
+                $filteredItems[] = $item;
+            }
+        }
+
+        return  $filteredItems ;
+    }
+
+    
+
+    $filteredBooks = array_filter($books, function ($book){
+
+        return $book['realeaseYear'] >= 2000;
+
+    })
+
+
+ 
     //  foreach($books as $book){
 
     //     //when putting the variable in a curly braces it says 
@@ -86,21 +115,19 @@
 
     ?>
     <!-- this is a shorthand for loops-->
-    <?php foreach ($books as $book) : ?>
+    <?php foreach ($filteredBooks as $book) : ?>
 
-        <?php if ($book['author'] == 'oge') : ?>
 
-            <a href="<?= $book['purchaseUrl'] ?>">
-                <?= $book['name'] ?>
-            </a>
 
-            <li><?= $book['name'] ?>
+        <a href="<?= $book['purchaseUrl'] ?>">
+            <?= $book['name'] ?>
+        </a>
 
-                <?= $book['realeaseYear'] ?>
+        <li><?= $book['name'] ?> (<?= $book['realeaseYear'] ?> )- by <?= $book['author'] ?>
 
-            </li>
+        </li>
 
-        <?php endif; ?>
+
     <?php endforeach; ?><br><br>
 
 
