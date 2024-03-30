@@ -1,4 +1,4 @@
-<!-- 
+<?php
 
 // $cool = "hey";
 
@@ -101,7 +101,4 @@
 
 // when using a dedicated html file omit the php end tag
 
-//require "index.view.php";
-
-
-<?php
+require "./views/index.view.php";
