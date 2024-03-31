@@ -1,21 +1,18 @@
-<?php 
+<?php
 
-function dd($value){
+function dd($value)
+{
     echo "<pre>";
 
-var_dump($value);
+    var_dump($value);
 
-echo "</pre>";
+    echo "</pre>";
 
-die(); 
-
-
+    die();
 }
 
-function URLIs($value){
+function URLIs($value)
+{
 
     return $_SERVER['REQUEST_URI'] === $value;
-
 }
-
-
