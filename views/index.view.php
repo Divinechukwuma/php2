@@ -1,6 +1,6 @@
 <?php require "partials/header.php" ?>
 <?php require "partials/nav.php" ?>
-
+<?php require "partials/banner.php" ?>
 
 
 <main>
@@ -9,7 +9,7 @@
         <h1>welcome</h1> to my home page</p>
     </div>
 </main>
-</div>
+
 
 
 <?php require "partials/footer.php" ?>

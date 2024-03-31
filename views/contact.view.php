@@ -8,7 +8,7 @@
         <h1>welcome</h1> to my contact page</p>
     </div>
 </main>
-</div>
+
 
 
 <?php require "partials/footer.php" ?>
