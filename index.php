@@ -6,8 +6,8 @@ require 'functions.php';
 
 $uri = $_SERVER['REQUEST_URI'];
 
- if ($uri === "controller/index.php") {
+ if ($uri === "/webapps/php2/") {
      require 'controller/index.php';
- } elseif($uri === '/controller/about.php'){
+ } elseif($uri === ''){
     require 'controller/about.php';
  }
