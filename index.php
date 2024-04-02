@@ -1,13 +1,11 @@
 <?php 
 
-// require 'functions.php';
+// require '.htaccess';
 
-// $uri = $_SERVER['REQUEST_URI'];
+require 'functions.php';
 
-// if ($uri === '/') {
-//     require 'controller/index.php';
-// } elseif ($uri === '/about') {
-//     require './controller/about.php';
-// }
+$uri = $_SERVER['REQUEST_URI'];
 
-
+ if ($uri === "/index.php/") {
+     require 'controller/index.php';
+ } 
