@@ -3,31 +3,39 @@
 require 'functions.php';
 // require 'router.php';
 
-class person{
-    
-    public $name;
-    public $age;
+//Connect to the database and execute the query 
 
-    public function breathe(){
 
-        echo $this->name . ' is breathing! and he is ' . $this->age;
+class database
+{
 
+    public function query()
+    {
+
+        $dsn = "mysql:host=localhost;dbname=php2";
+        $username = "divine";
+        $password = "CHUKs989@$";
+
+
+        $pdo = new PDO($dsn, $username, $password);
+
+
+        $statement = $pdo->prepare("SELECT * FROM tbl_php");
+
+        $statement->execute();
+
+        return $statement->fetchAll(PDO::FETCH_ASSOC);
     }
-
 }
 
-$person = new person();
+$db = new database();
 
-$person->name = 'john doe';
-$person->age = 25;
-
-$person->breathe();
-
-// $person2 = new person();
-
-// $person2->name = 'divine';
-// $person2->age = 30;
-
-// dd($person);
+$posts = $db->query();
 
 
+// dd($posts);
+
+foreach ($posts as $post) {
+
+    echo "<li>" . $post['title'] . "</li>";
+}
