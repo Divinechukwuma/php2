@@ -8,19 +8,12 @@ class Database
     public $connection;
 
 
-    public function __construct()
+    public function __construct($config)
     {
 
-        $config = [
+        //when using the function build query it carries the keys and property from the assoc array and tranform it into an http query string
 
-            'host' => 'localhost',
-            'dbname' => 'php2'
-
-        ];
-
-        dd('mysql:' . http_build_query($config, '',';'));
-        
-        $dsn = "mysql:host={$config['host']};dbname={$config['dbname']}";
+        $dsn ='mysql:' . http_build_query($config, '',';'); //example host=localhost; dbname=php2;
         $username = "divine";
         $password = "CHUKs989@$";
 
@@ -33,13 +26,13 @@ class Database
 
     }
 
-    public function query($query)
+    public function query($query , $param = [])
     {
 
 
         $statement = $this->connection->prepare($query);
 
-        $statement->execute();
+        $statement->execute($param);
 
         return $statement;
     }

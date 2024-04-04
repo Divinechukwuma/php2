@@ -3,9 +3,21 @@
 require 'functions.php';
 require 'Database.php'; 
 
-$db = new Database();
+//this is saying create a variable called $config and require whatever is returned in the config.php file
+
+ $config =  require 'config.php';
+
+$db = new Database($config['database']);
+
+// $id = $_GET['id'];
+
+$query = "SELECT * FROM users WHERE id  = ?";
   
-$posts = $db->query("SELECT * FROM tbl_php")->fetchAll();
+$posts = $db->query($query, ['id'])->fetch();
+
+dd($query);
+
+
 
 
 dd($posts);
