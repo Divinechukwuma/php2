@@ -1,5 +1,7 @@
-<?
-class database
+<?php
+
+
+class Database
 {
 
 
@@ -8,13 +10,26 @@ class database
 
     public function __construct()
     {
+
+        $config = [
+
+            'host' => 'localhost',
+            'dbname' => 'php2'
+
+        ];
+
+        dd('mysql:' . http_build_query($config, '',';'));
         
-        $dsn = "mysql:host=localhost;dbname=php2";
+        $dsn = "mysql:host={$config['host']};dbname={$config['dbname']}";
         $username = "divine";
         $password = "CHUKs989@$";
 
 
-        $this->connection = new PDO($dsn, $username, $password);
+        $this->connection = new PDO($dsn, $username, $password, [
+
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC
+            
+        ]);
 
     }
 

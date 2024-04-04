@@ -3,9 +3,9 @@
 require 'functions.php';
 require 'Database.php'; 
 
-$db = new database();
+$db = new Database();
   
-$posts = $db->query("SELECT * FROM tbl_php")->fetchAll(PDO::FETCH_ASSOC);
+$posts = $db->query("SELECT * FROM tbl_php")->fetchAll();
 
 
 dd($posts);
