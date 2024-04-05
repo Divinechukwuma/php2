@@ -1,5 +1,7 @@
 <?php
 
+
+
 function dd($value)
 {
     echo "<pre>";
@@ -16,4 +18,6 @@ function URLIs($value)
 
     return $_SERVER['REQUEST_URI'] === $value;
 }
+
+
  

@@ -3,6 +3,8 @@
 <?php require "partials/banner.php" ?>
 
 
+
+
 <main>
     <?php foreach($notes as $note):?>
 
