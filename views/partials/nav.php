@@ -12,6 +12,7 @@
                             <a href="/webapps/php2/" class="<?= URLIs('/webapps/php2/')  ? 'bg-gray-900 text-white' : 'text-gray-300' ?> hover:bg-gray-700 rounded-md px-3 py-2 text-sm font-medium " aria-current="page">Home</a>
                             <a href="/webapps/php2/about" class="<?= URLIs('/webapps/php2/about') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> hover:bg-gray-700 rounded-md px-3 py-2 text-sm font-medium">About</a>
                             <a href="/webapps/php2/contact" class="<?= URLIs('/webapps/php2/contact') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> hover:bg-gray-700 rounded-md px-3 py-2 text-sm font-medium">Contact</a>
+                            <a href="/webapps/php2/notes" class="<?= URLIs('/webapps/php2/notes') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> hover:bg-gray-700 rounded-md px-3 py-2 text-sm font-medium">notes</a>
                         </div>
 
                     </div>

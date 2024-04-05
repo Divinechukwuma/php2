@@ -8,7 +8,8 @@ $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
  $routes = [
     "/webapps/php2/" => 'controller/index.php',
     "/webapps/php2/about" => 'controller/about.php',
-    "/webapps/php2/contact" => 'controller/contact.php'
+    "/webapps/php2/contact" => 'controller/contact.php',
+    "/webapps/php2/notes" => 'controller/notes.php'
  ];
 
  // set the 404 as the default  you can change it in the function
