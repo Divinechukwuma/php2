@@ -11,12 +11,12 @@ $heading = "My Notes";
 
 
 // dd($_GET[0]['id']);
-
+// dd($db[]);
 
  
-$note = $db->query("SELECT * FROM notes WHERE id = :id", ['id' => $_GET['id']])->fetch();
+$notes = $db->query("SELECT * FROM notes WHERE user_id = 2")->fetchAll();
 
-// dd($note);
+//  dd($notes);
 
 require "./views/notes.view.php";
 
