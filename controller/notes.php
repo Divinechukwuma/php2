@@ -10,7 +10,8 @@ $db = new Database($config['database']);
 $heading = "My Notes";
 
 
-dd($_GET['id']);
+// dd($_GET[0]['id']);
+
 
  
 $note = $db->query("SELECT * FROM notes WHERE id = :id", ['id' => $_GET['id']])->fetch();
