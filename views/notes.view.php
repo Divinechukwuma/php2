@@ -6,15 +6,16 @@
 
 
 <main>
-    <?php foreach($notes as $note):?>
+    <?php foreach ($notes as $note) : ?>
 
+ 
         <li>
             <a href="/notes?=<?= $note['id'] ?>" class="text-blue-500 hover:underline">
                 <?= $note['body'] ?>
             </a>
         </li>
 
-        <?php endforeach ?>
+    <?php endforeach ?>
 </main>
 
 
