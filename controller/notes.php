@@ -9,10 +9,13 @@ $db = new Database($config['database']);
 
 $heading = "My Notes";
 
+
+dd($_GET['id']);
+
  
 $note = $db->query("SELECT * FROM notes WHERE id = :id", ['id' => $_GET['id']])->fetch();
 
-dd($note);
+// dd($note);
 
 require "./views/notes.view.php";
 

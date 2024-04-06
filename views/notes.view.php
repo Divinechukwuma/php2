@@ -10,7 +10,7 @@
 
  
         <li>
-            <a href="/notes?=<?= $note['id'] ?>" class="text-blue-500 hover:underline">
+            <a href="/webapps/php/notes?id=<?= $note['id'] ?>" class="text-blue-500 hover:underline">
                 <?= $note['body'] ?>
             </a>
         </li>
