@@ -11,11 +11,21 @@ $db = new Database($config['database']);
 $heading = " My Note";
 
 
+$note = $db->query("SELECT * FROM notes WHERE id = :id ", [
 
- 
-$note = $db->query("SELECT * FROM notes WHERE id = :id ", ['id' => $_GET['id']])->fetch();
+    'id' => $_GET['id']
 
-// dd($note);
+    ])->fetch();
+
+  if(! $note){
+    abort();
+  }
+
+  if($note['user_id'] !==  2){
+
+    abort(403);
+
+  }
 
 require "./views/note.view.php";
 
