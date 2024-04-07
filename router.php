@@ -1,17 +1,8 @@
 <?php
 
-
-$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
+$routes = require ("routes.php");
 
 //this is a refractor of the original code its an array of the uri then it checked the called and requireds the $uri
-
-$routes = [
-   "/webapps/php2/" => 'controller/index.php',
-   "/webapps/php2/about" => 'controller/about.php',
-   "/webapps/php2/contact" => 'controller/contact.php',
-   "/webapps/php2/notes" => 'controller/notes.php',
-   "/webapps/php2/note" => 'controller/note.php'
-];
 
 // set the 404 as the default  you can change it in the function
 
@@ -41,5 +32,6 @@ function routeToController($uri, $routes)
    }
 } 
 
+$uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
 routeToController($uri, $routes,);
