@@ -17,11 +17,9 @@ $note = $db->query("SELECT * FROM notes WHERE id = :id ", [
 
   'id' => $_GET['id']
 
-])->fetch();
+])->findORFail();
 
-if (!$note) {
-  abort();
-}
+
 
 
 if ($note['user_id'] !==  $currentUserId) {
