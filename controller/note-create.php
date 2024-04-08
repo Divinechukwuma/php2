@@ -16,6 +16,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $errors['body'] = 'A body is required';
     }
+  
+    if (strlen($_POST['body']) > 1000) {
+
+        $errors['body'] = 'Sorry note cannot be more than 1000 characters';
+    }
 
     if (empty($errors)) {
 
