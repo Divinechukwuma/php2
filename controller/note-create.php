@@ -8,7 +8,6 @@ $db = new Database($config['database']);
 
 $heading = "Create Notes";
 
-
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // :: = this is how you call or trigger a static method on a class
