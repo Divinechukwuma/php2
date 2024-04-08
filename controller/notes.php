@@ -11,7 +11,7 @@ $heading = "My Notes";
 
 
  
-$notes = $db->query("SELECT * FROM notes WHERE user_id = 2 ")->fetchAll();
+$notes = $db->query("SELECT * FROM notes WHERE user_id = 5 ")->fetchAll();
 
 // dd($note);
 

@@ -10,7 +10,7 @@ $db = new Database($config['database']);
 
 $heading = " My Note";
 
-$currentUserId = 2;
+$currentUserId = 5;
 
 
 $note = $db->query("SELECT * FROM notes WHERE id = :id ", [
