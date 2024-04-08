@@ -11,7 +11,7 @@
 
         <p class="m-10">
 
-            <?= $note['body'] ?>
+        <?= htmlspecialchars($note['body']) ?>>
         </p>
 
 </main>
