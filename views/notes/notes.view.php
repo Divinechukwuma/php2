@@ -1,6 +1,6 @@
-<?php require "partials/header.php" ?>
-<?php require "partials/nav.php" ?>
-<?php require "partials/banner.php" ?>
+<?php require "./views/partials/header.php" ?>
+<?php require " ./partials/nav.php" ?>
+<?php require "./views/partials/banner.php" ?>
 
 
 
@@ -24,4 +24,4 @@
 
 
 
-<?php require "partials/footer.php" ?>
+<?php require "./views/footer.php" ?>
