@@ -1,6 +1,6 @@
-<?php require "./views/partials/header.php" ?>
-<?php require " ./partials/nav.php" ?>
-<?php require "./views/partials/banner.php" ?>
+<?php require (__DIR__ .  "/../partials/header.php") ?>
+<?php require   (__DIR__ .  "/../partials/nav.php") ?>
+<?php require  (__DIR__ .  "/../partials/banner.php") ?>
 
 
 
@@ -24,4 +24,4 @@
 
 
 
-<?php require "./views/footer.php" ?>
+<?php require  (__DIR__ .  "/../partials/footer.php") ?>
