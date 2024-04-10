@@ -1,8 +1,5 @@
 <?php
 
-var_dump('hello there');
-die();
-
 function routeToController($uri, $routes)
 {
 
