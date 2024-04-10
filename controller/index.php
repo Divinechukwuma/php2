@@ -2,7 +2,7 @@
 
 $heading = "home";
 
-require "./views/index.view.php";
+base_path(require "./views/index.view.php");
 
 
 

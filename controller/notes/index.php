@@ -15,5 +15,5 @@ $notes = $db->query("SELECT * FROM notes WHERE user_id = 5 ")->fetchAll();
 
 // dd($note);
 
-require "./views/notes/index.view.php";
+base_path(require "./views/notes/index.view.php");
 

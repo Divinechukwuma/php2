@@ -26,3 +26,11 @@ function authorize($condition, $status = response::UNAUTHORIZED)
         abort($status);
     }
 }
+
+function base_path($path){
+
+    return BASE_PATH . $path;
+
+}
+
+dd($_SERVER);

@@ -3,4 +3,4 @@
 $heading = "Contact Us";
 
 
-require "./views/contact.view.php";
+base_path(require "./views/contact.view.php");

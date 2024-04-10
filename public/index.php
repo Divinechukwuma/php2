@@ -1,8 +1,13 @@
 <?php
 
-require 'functions.php';
-require 'Database.php';
-require 'response.php';
-require 'router.php';
+
+const BASE_PATH = __DIR__ . '/../';
+
+dd(BASE_PATH);
+
+require BASE_PATH .  'functions.php';
+require base_path( 'Database.php');
+require  base_path('response.php');
+require base_path('router.php');
  
 

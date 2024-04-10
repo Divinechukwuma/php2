@@ -1,6 +1,9 @@
-    RewriteEngine On
-    RewriteBase /webapps/php2/public
+RewriteEngine On
+RewriteBase /webapps/php2/public
 
-    RewriteCond %{REQUEST_FILENAME} !-f
-    RewriteCond %{REQUEST_FILENAME} !-d
-    RewriteRule ^(.+)$ index.php [L,QSA]
+# Route all requests to index.php
+RewriteCond %{REQUEST_URI} !^/webapps/php2/
+RewriteRule ^(.*)$ index.php [L]
+
+# Prevent direct access to specific folder
+RewriteRule ^(folder_to_prevent_access)/ - [F]
