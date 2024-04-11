@@ -24,4 +24,4 @@ authorize($note['user_id'] == $currentUserId);
 
 
 
-base_path(require "./views/notes/show.view.php");
+require "./views/notes/show.view.php";

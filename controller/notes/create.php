@@ -36,4 +36,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 
-base_path(require "./views/notes/create.view.php");
+require "./views/notes/create.view.php";

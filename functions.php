@@ -27,10 +27,10 @@ function authorize($condition, $status = response::UNAUTHORIZED)
     }
 }
 
-function base_path($path){
+// function base_path($path){
 
-    return BASE_PATH . $path;
+//     return BASE_PATH . $path;
 
-}
+// }
 
-dd($_SERVER);
+// dd($_SERVER);

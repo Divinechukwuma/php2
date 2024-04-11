@@ -1,13 +1,10 @@
 <?php
 
 
-const BASE_PATH = __DIR__ . '/../';
+require   'functions.php';
 
-dd(BASE_PATH);
+require 'Database.php';
 
-require BASE_PATH .  'functions.php';
-require base_path( 'Database.php');
-require  base_path('response.php');
-require base_path('router.php');
- 
+require  'response.php';
 
+require  'router.php';
