@@ -11,9 +11,6 @@ function routeToController($uri, $routes)
       abort();
    }
 }
-
-$routes = require("routes.php");
-
 //this is a refractor of the original code its an array of the uri then it checked the called and requireds the $uri
 // set the 404 as the default  you can change it in the function
 function abort($code = 404)
@@ -27,3 +24,7 @@ function abort($code = 404)
 $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
 routeToController($uri, $routes,);
+
+
+
+$routes = require base_path("routes.php");
