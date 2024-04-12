@@ -27,10 +27,18 @@ function authorize($condition, $status = response::UNAUTHORIZED)
     }
 }
 
-// function base_path($path){
+ function base_path($path){
 
-//     return BASE_PATH . $path;
+     return BASE_PATH . $path;
 
-// }
+ }
 
-// dd($_SERVER);
+
+ function view($path , $attribute = []){
+    
+    extract($attribute);
+
+    require base_path("./views/" . $path);
+ }
+
+//  dd($_SERVER);
