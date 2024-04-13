@@ -5,7 +5,7 @@ function routeToController($uri, $routes)
 
    if (array_key_exists($uri, $routes)) {
 
-      require $routes[$uri];
+      require base_path($routes[$uri]);
    } else {
       //if u dont input anything it will send the 404 message but u can change the default
       abort();
@@ -23,8 +23,7 @@ function abort($code = 404)
 
 $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
+$routes = require base_path("routes.php");
+
 routeToController($uri, $routes,);
 
-
-
-$routes = require base_path("routes.php");
