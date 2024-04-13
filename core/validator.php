@@ -1,5 +1,7 @@
 <?php
 
+namespace core;
+
 class validator
 {
     //this is a function of a classs that is validating the form input and setting varriable to be filled by the controller 
