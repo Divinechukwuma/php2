@@ -6,59 +6,45 @@ class Router
 {
    protected $routes = [];
 
-   public function get($uri, $controller)
+   public function add($method, $uri, $controller)
    {
 
       $this->routes[] = [
 
          'uri' => $uri,
          'controller' => $controller,
-         'method' => 'GET'
+         'method' => $method
       ];
+   }
+
+   public function get($uri, $controller)
+   {
+
+      $this->add('GET', $uri, $controller);
    }
 
    public function post($uri, $controller)
    {
 
-      $this->routes[] = [
-
-         'uri' => $uri,
-         'controller' => $controller,
-         'method' => 'POST'
-      ];
+      $this->add('POST', $uri, $controller);
    }
 
    public function delete($uri, $controller)
    {
 
-      $this->routes[] = [
-
-         'uri' => $uri,
-         'controller' => $controller,
-         'method' => 'DELETE'
-      ];
+      $this->add('DELETE', $uri, $controller);
    }
 
    public function patch($uri, $controller)
    {
 
-      $this->routes[] = [
-
-         'uri' => $uri,
-         'controller' => $controller,
-         'method' => 'PATCH'
-      ];
+      $this->PATCH('GET', $uri, $controller);
    }
 
    public function put($uri, $controller)
    {
 
-      $this->routes[] = [
-
-         'uri' => $uri,
-         'controller' => $controller,
-         'method' => 'PUT'
-      ];
+      $this->PUT('GET', $uri, $controller);
    }
 
    public function route($uri, $method)
@@ -76,7 +62,7 @@ class Router
       $this->abort();
    }
 
-   protected function abort($code = 404)
+   function abort($code = 404)
    {
       // //this is a refractor of the original code its an array of the uri then it checked the called and requireds the $uri
       //set the 404 as the default  you can change it in the function

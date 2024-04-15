@@ -21,6 +21,15 @@ function URLIs($value)
     return $_SERVER['REQUEST_URI'] === $value;
 }
 
+function abort( $code = 404){
+    // //this is a refractor of the original code its an array of the uri then it checked the called and requireds the $uri
+      //set the 404 as the default  you can change it in the function
+
+      http_response_code($code);
+      require  base_path("views/{$code}.php");
+      die();
+}
+
 function authorize($condition, $status = response::UNAUTHORIZED)
 {
 
