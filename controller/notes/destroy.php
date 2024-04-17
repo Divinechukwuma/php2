@@ -1,7 +1,9 @@
 
 <?php
-
+ bmn,./l.ljhibgui jhk hcnukgk ,cy ytfr j yktu6iuitftiyiilbt7rtiyigyuigy7yuryt
 use core\Database;
+
+dd($route);
 
 //this is saying create a variable called $config and require whatever is returned in the config.php file
 
@@ -17,8 +19,7 @@ $currentUserId = 5;
   
   ])->findORFail();
   
-  authorize($note['user_id'] == $currentUserId);
-
+  authorize($note['user_id'] === $currentUserId);
 
   //form was submitted delete the fomer note
   
