@@ -1,6 +1,5 @@
 
 <?php
- bmn,./l.ljhibgui jhk hcnukgk ,cy ytfr j yktu6iuitftiyiilbt7rtiyigyuigy7yuryt
 use core\Database;
 
 dd($route);
