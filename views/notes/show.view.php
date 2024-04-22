@@ -15,7 +15,6 @@
   </p>
 
   <form method='POST'>
-
     <input type='hidden' name="_method " value="DELETE">
     <input type='hidden' name='id' value="<?= $note['id'] ?>">
     <button class='bg-red-600 text-white p-3 m-3 text-small'>DELETE</button>

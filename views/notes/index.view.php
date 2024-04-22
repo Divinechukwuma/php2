@@ -14,7 +14,7 @@
                 <a href="/webapps/php2/note?id=<?= $note['id'] ?>" class="text-blue-500 hover:underline">
                     <?= htmlspecialchars($note['body']) ?>
                 </a>
-            </li>
+            </li> 
 
         <?php endforeach ?>
     </ul>

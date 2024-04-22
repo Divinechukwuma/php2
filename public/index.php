@@ -20,7 +20,7 @@ $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
 //if there isnt a given method use the server method this is a shorthand;
 
-$method = $_POST["_method "] ?? $_SERVER["REQUEST_METHOD"];
+$method = $_POST["_method"] ?? $_SERVER["REQUEST_METHOD"];
 
 $router->route($uri, $method);
 

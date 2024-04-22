@@ -57,9 +57,13 @@ class Router
          }
       }
 
+
+      dd($_SERVER);
+
+
       // Call abort
 
-      $this->abort();
+      // $this->abort();
    }
 
    function abort($code = 404)

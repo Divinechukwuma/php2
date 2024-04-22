@@ -2,6 +2,7 @@
 
 use core\validator;
 use core\Database;
+//dd($route);
 
 require  base_path('core/validator.php');
 
