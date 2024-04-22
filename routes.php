@@ -12,7 +12,8 @@ $router->get("/webapps/php2/note", "controller/notes/show.php");
 $router->delete("/webapps/php2/note", "controller/notes/destroy.php");
 
 
+
 $router->get("/webapps/php2/create", "controller/notes/create.php");
 $router->post("/webapps/php2/create", "controller/notes/store.php");
 
-//dd($router);
+//dd($router->routes);

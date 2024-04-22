@@ -2,7 +2,7 @@
 <?php
 use core\Database;
 
-dd($route);
+//dd($route);
 
 //this is saying create a variable called $config and require whatever is returned in the config.php file
 
