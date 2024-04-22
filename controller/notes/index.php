@@ -1,3 +1,5 @@
+
+<input type='hidden' name="_method" value="DELETE">
 <?php
 
 use core\Database;

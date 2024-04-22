@@ -11,11 +11,12 @@
 
   <p class="m-10">
 
-    <?= htmlspecialchars($note['body']) ?>>
+    <?= htmlspecialchars($note['body']) ?>
+
   </p>
 
-  <form method='POST'>
-    <input type='hidden' name="_method " value="DELETE">
+  <form  method='POST'>
+    <input type='hidden' name="_method" value="DELETE">
     <input type='hidden' name='id' value="<?= $note['id'] ?>">
     <button class='bg-red-600 text-white p-3 m-3 text-small'>DELETE</button>
 
