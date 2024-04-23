@@ -1,36 +1,30 @@
-
 <input type='hidden' name="_method" value="DELETE">
 <?php
+
+use core\App;
 use core\Database;
 
-//dd($route);
+$db =  App::resolve(Database::class);
 
-//this is saying create a variable called $config and require whatever is returned in the config.php file
-
-$config =  require base_path('config.php');
-
-$db = new Database($config['database']);
 
 $currentUserId = 5;
 
-  $note = $db->query("SELECT * FROM notes WHERE id = :id ", [
+$note = $db->query("SELECT * FROM notes WHERE id = :id ", [
 
-    'id' => $_POST['id']
-  
-  ])->findORFail();
-  
-  authorize($note['user_id'] === $currentUserId);
+  'id' => $_POST['id']
 
-  //form was submitted delete the fomer note
-  
- $db->query("DELETE FROM notes WHERE id = :id", [
+])->findORFail();
+
+authorize($note['user_id'] === $currentUserId);
+
+//form was submitted delete the fomer note
+
+$db->query("DELETE FROM notes WHERE id = :id", [
 
   'id' => $_POST['id']
 ]);
 
 
- header("location: /webapps/php2/notes");
+header("location: /webapps/php2/notes");
 
- exit();
-
-
+exit();
