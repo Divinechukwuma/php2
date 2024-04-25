@@ -18,7 +18,7 @@ $note = $db->query("SELECT * FROM notes WHERE id = :id ", [
 
 //authorize that the current user can edit the note
 
-authorize($note['user_id'] == $currentUserId);
+authorize($note['user_id'] === $currentUserId);
 
 //Validate the form
 
@@ -42,7 +42,7 @@ if (count($errors)) {
 
 //if NO VALIDATION ERROR UPDATE 
 
-$db->query('update notes set body = :body where id = :id', [
+$db->query('UPDATE notes SET body = :body WHERE id = :id', [
     'id' => $_POST['id'],
     'body' => $_POST['body'],
 ]);
