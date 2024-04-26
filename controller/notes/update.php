@@ -49,5 +49,5 @@ $db->query('UPDATE notes SET body = :body WHERE id = :id', [
 
 //REDIRECT AND DIE
 
-header("location : webapps/php2/notes");
+header("location: /webapps/php2/notes");
 die();
