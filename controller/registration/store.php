@@ -21,7 +21,7 @@ if (!validator::string($password, 7, 255)) {
 
 if (!empty($errors)) {
     return view('registration/create.view.php', [
-        'errors' => $errors
+        'errors' => $errors 
     ]);
 }
 
@@ -35,7 +35,7 @@ $user = $db->query('SELECT * FROM user  WHERE  email = :email', [
 if ($user) {
     //then someone with that email already exists and has an account.
     //if yes,redirect to a login page
-    header('location: /webapps/php2/');
+    header('location: /webapps/php2/about');
     exit();
 } else {
 
@@ -48,8 +48,9 @@ if ($user) {
     //mark that the user has logged in.
     $_SESSION['user'] = [
         'email' => $email,
+        'password' => $password
     ];
 
-    header('location: /webapps/php2/');
+    header('location: /webapps/php2/about');
     exit();
 }
