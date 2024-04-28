@@ -42,14 +42,10 @@ if ($user) {
     // if not,save one to the database,and then log the user in and redirect.
     $db->query('INSERT INTO user(email,password) VALUES(:email, :password)', [
         'email' => $email,
-        'password' => $password
+        'password' => password_hash( $password, PASSWORD_BCRYPT) 
     ]);
 
-    //mark that the user has logged in.
-    $_SESSION['user'] = [
-        'email' => $email,
-        'password' => $password
-    ];
+    login($user);
 
     header('location: /webapps/php2/about');
     exit();
