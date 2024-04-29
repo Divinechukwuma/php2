@@ -12,7 +12,9 @@
                             <a href="/webapps/php2/" class="<?= URLIs('/webapps/php2/')  ? 'bg-gray-900 text-white' : 'text-gray-300' ?> hover:bg-gray-700 rounded-md px-3 py-2 text-sm font-medium " aria-current="page">Home</a>
                             <a href="/webapps/php2/about" class="<?= URLIs('/webapps/php2/about') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> hover:bg-gray-700 rounded-md px-3 py-2 text-sm font-medium">About</a>
                             <a href="/webapps/php2/contact" class="<?= URLIs('/webapps/php2/contact') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> hover:bg-gray-700 rounded-md px-3 py-2 text-sm font-medium">Contact</a>
+                            <?php if ($_SESSION['user'] ?? false) : ?>
                             <a href="/webapps/php2/notes" class="<?= URLIs('/webapps/php2/notes') ? 'bg-gray-900 text-white' : 'text-gray-300' ?> hover:bg-gray-700 rounded-md px-3 py-2 text-sm font-medium">notes</a>
+                            <?php endif ?>
                         </div>
 
                     </div>
@@ -59,10 +61,16 @@
                   To: "transform opacity-0 scale-95"
               -->
                             <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
-                                <!-- Active: "bg-gray-100", Not Active: "" -->
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-0">Your Profile</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-1">Settings</a>
-                                <a href="#" class="block px-4 py-2 text-sm text-gray-700" role="menuitem" tabindex="-1" id="user-menu-item-2">Sign out</a>
+                                <div class="absolute right-0 z-10 mt-2 w-48 origin-top-right rounded-md bg-white py-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none text-2xl" role="menu" aria-orientation="vertical" aria-labelledby="user-menu-button" tabindex="-1">
+                                <?php if ($_SESSION['user'] ?? false) : ?>
+                                   
+                                    <form action="/webapps/php2/logout" method="POST">
+                                        <input type="hidden" name="_method" value="DELETE"/>
+                                        <button>Log Out</button>
+                                    </form>
+                                
+                                <?php endif; ?>
+                            </div>
                             </div>
                         </div>
                     </div>

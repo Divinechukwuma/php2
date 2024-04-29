@@ -19,7 +19,8 @@ $router->get("/webapps/php2/create", "controller/notes/create.php");
 $router->post("/webapps/php2/notes", "controller/notes/store.php");
 
 $router->get("/webapps/php2/register", "controller/Registration/create.php")->only('guest');
-$router->post("/webapps/php2/register", "controller/Registration/store.php");
+$router->post("/webapps/php2/register", "controller/Registration/store.php")->only('guest');
 
 $router->get("/webapps/php2/login", "controller/sessions/create.php")->only('guest');
 $router->post("/webapps/php2/login", "controller/sessions/store.php")->only('guest');
+$router->delete("/webapps/php2/logout", "controller/sessions/destroy.php")->only('auth');
