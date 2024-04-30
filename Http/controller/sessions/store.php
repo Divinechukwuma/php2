@@ -1,6 +1,7 @@
 <?php
 
 use core\Authenticator;
+use core\session;
 use Http\Forms\LoginForm;
 
 
@@ -21,6 +22,7 @@ if ($form->validate($email, $password)) {
     $form->error('email', 'No matching account for that email address and password.');
 };
 
-return view('sessions/create.view.php', [
-    'errors' => $form->errors()
-]);
+session::flash('errors', $form->errors());
+
+return view('webapps/php2/login');
+
