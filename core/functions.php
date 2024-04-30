@@ -59,3 +59,10 @@ function redirect($path){
     header($path);
     exit();
 }
+
+// you can override the default
+
+function old($key, $deafult = '')
+{
+    return core\session::get('old')[$key] ?? $deafult;
+}

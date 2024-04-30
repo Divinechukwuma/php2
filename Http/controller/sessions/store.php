@@ -23,6 +23,8 @@ if ($form->validate($email, $password)) {
 };
 
 session::flash('errors', $form->errors());
+session::flash('old', [
+    'email' => $email
+]);
 
 return view('webapps/php2/login');
-
