@@ -5,22 +5,17 @@ use core\session;
 use Http\Forms\LoginForm;
 
 
-$email = $_POST['email'];
-$password  = $_POST['password'];
+$form = LoginForm::validate($attributes = [
+    'email' => $_POST['email'],
+    'password' => $_POST['password']
+]);
 
-$form = new LoginForm();
+if ((new Authenticator())->attempt($attributes['email'], $attributes['password'])) {
 
-if ($form->validate($email, $password)) {
+    redirect('location: /webapps/php2/about');
+}
 
-    $auth = new Authenticator();
-
-    if ($auth->attempt($email, $password)) {
-
-        redirect('location: /webapps/php2/about');
-    }
-
-    $form->error('email', 'No matching account for that email address and password.');
-};
+$form->error('email', 'No matching account for that email address and password.');
 
 session::flash('errors', $form->errors());
 session::flash('old', [

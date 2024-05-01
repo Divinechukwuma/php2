@@ -1,37 +1,53 @@
 <?php
 
 namespace Http\Forms;
-use core\validator; 
+
+use core\ValidationException;
+use core\validator;
 
 class LoginForm
 {
 
     protected $errors = [];
 
-    public function validate($email, $password)
+    public function __construct($attributes)
     {
         $errors = [];
 
-        if (!validator::email($email)) {
+        if (!validator::email($attributes['email'])) {
             $this->errors['email'] = "please provide a valid email address";
         }
 
-        if (!validator::string($password)) {
+        if (!validator::string($attributes['password'])) {
             $this->errors['password'] = "please provide a valid password";
         }
+    }
 
-        
-        return empty($this->errors);
 
+    public static function validate($attributes)
+    {
+        $instance = new static($attributes);
+
+        if ($instance->failed()) {
+            throw new ValidationException();
+        }
+
+        return $instance;
+
+    }
+
+    public function failed()
+    {
+        return count($this->errors);
     }
 
     public function errors()
     {
-        return $this->errors();
+        return $this->errors;
     }
 
-    public function error($field, $message){
+    public function error($field, $message)
+    {
         $this->errors[$field] = $message;
     }
-
 }
